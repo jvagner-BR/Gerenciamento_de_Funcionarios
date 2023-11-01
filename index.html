@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de funcionários</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+</head>
+
+<body>
+    <div id="nav_container">
+        <div id="start">
+            <a href="#" id="a1">DESENVOLVEDOR PHP 2023</a>
+        </div>
+        <div id="end">
+            <a href="" class="a2">Home</a>
+            <a href="" class="a2">Empresa</a>
+            <a href="" class="a2">Funcionários</a>
+            <a href="" class="a2" id="aLinks">Links</a>
+        </div>
+    </div>
+
+    <div id="container">
+        <div id="cadastro_container">
+            <div class="name_CadastrodeFuncionários">
+                <h1>Cadastro de Funcionários</h1>
+            </div>
+
+            <form id="cadastroFuncionarioForm">
+                <input type="hidden" id="modoFormulario" name="modo" value="criacao">
+                <input type="hidden" id="funcionarioId" name="id" value=""> <!-- Adicione um campo oculto para armazenar o ID do funcionário -->
+            
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome do funcionário.." required>
+            
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome do funcionário.." required>
+            
+                <label for="cargo">Cargo:</label>
+                <select id="cargo" name="cargo" required>
+                    <!-- Opções de cargos devem ser carregadas dinamicamente a partir do backend -->
+                </select>
+            
+                <label for="nascimento">Data de Nascimento:</label>
+                <input type="date" id="nascimento" name="nascimento">
+            
+                <label for="salario">Salário:</label>
+                <input type="number" id="salario" name="salario" step="0.01" placeholder="0,00" required>
+            
+                <input type="hidden" name="action" value="cadastrarFuncionario">
+                <button class="buttonForm" id="btnForm" type="submit">Cadastrar</button>
+            
+            </form>
+        </div>
+        <div id="lista_container">
+            <table id="funcionariosTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Sobrenome</th>
+                        <th>Cargo</th>
+                        <th>Data de Nascimento</th>
+                        <th>Salário</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="funcionariosTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="container2">
+        <div id="cadastro_container">
+            <div class="name_CadastrodeFuncionários">
+                <h1>Cadastro de Cargos</h1>
+            </div>
+
+            <form id="cadastroCargoForm">
+                <input type="hidden" id="modoFormulario2" name="modo" value="criacao">
+                <input type="hidden" id="cargoId" name="id" value="">
+                <label for="descricao">Descrição do Cargo:</label>
+                <input type="text" id="descricao" name="descricao" required>
+                <input type="hidden" name="action" value="cadastrarCargo">
+                <button class="buttonForm" id="btnForm2" type="submit">Adicionar Cargo</button>
+            </form>
+        </div>
+        <div id="lista_cargos">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="cargosTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
